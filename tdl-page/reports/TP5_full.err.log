@@ -1,4 +1,15 @@
 Traceback (most recent call last):
+  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 198, in ensure_async
+    result = await obj
+  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/jupyter_client/channels.py", line 315, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
   File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 1314, in execute
@@ -9,59 +20,18 @@ Traceback (most recent call last):
     return future.result()
   File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-print('Batch size : ', batch_size)
-
-losses = train(net, 
-    trainloader,
-    N_passes=200,  
-    lr=0.01)
-
-plt.ylim(0, 1.1 * np.max(losses))
-plt.plot(losses)
-plt.grid(alpha=.3)
-------------------
-
------ stdout -----
-Batch size :  32
-------------------
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[8], line 3[0m
-[1;32m      1[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mBatch size : [39m[38;5;124m'[39m, batch_size)
-[0;32m----> 3[0m losses [38;5;241m=[39m [43mtrain[49m[43m([49m[43mnet[49m[43m,[49m[43m [49m
-[1;32m      4[0m [43m    [49m[43mtrainloader[49m[43m,[49m
-[1;32m      5[0m [43m    [49m[43mN_passes[49m[38;5;241;43m=[39;49m[38;5;241;43m200[39;49m[43m,[49m[43m  [49m
-[1;32m      6[0m [43m    [49m[43mlr[49m[38;5;241;43m=[39;49m[38;5;241;43m0.01[39;49m[43m)[49m
-[1;32m      8[0m plt[38;5;241m.[39mylim([38;5;241m0[39m, [38;5;241m1.1[39m [38;5;241m*[39m np[38;5;241m.[39mmax(losses))
-[1;32m      9[0m plt[38;5;241m.[39mplot(losses)
-
-Cell [0;32mIn[7], line 6[0m, in [0;36mtrain[0;34m(net, trainloader, N_passes, lr)[0m
-[1;32m      1[0m [38;5;28;01mdef[39;00m [38;5;21mtrain[39m(net, 
-[1;32m      2[0m           trainloader, 
-[1;32m      3[0m           N_passes[38;5;241m=[39m[38;5;241m1[39m, 
-[1;32m      4[0m           lr[38;5;241m=[39m[38;5;241m0.01[39m):
-[0;32m----> 6[0m     optimizer [38;5;241m=[39m [43moptim[49m[38;5;241;43m.[39;49m[43mSGD[49m[43m([49m[43mnet[49m[38;5;241;43m.[39;49m[43mparameters[49m[43m([49m[43m)[49m[43m,[49m[43m [49m[43mlr[49m[38;5;241;43m=[39;49m[43mlr[49m[43m)[49m
-[1;32m      7[0m     criterion [38;5;241m=[39m nn[38;5;241m.[39mMSELoss()
-[1;32m      9[0m     losses [38;5;241m=[39m []
-
-File [0;32m~/anaconda3/envs/py39/lib/python3.9/site-packages/torch/optim/sgd.py:27[0m, in [0;36mSGD.__init__[0;34m(self, params, lr, momentum, dampening, weight_decay, nesterov, maximize, foreach, differentiable)[0m
-[1;32m     25[0m [38;5;28;01mif[39;00m nesterov [38;5;129;01mand[39;00m (momentum [38;5;241m<[39m[38;5;241m=[39m [38;5;241m0[39m [38;5;129;01mor[39;00m dampening [38;5;241m!=[39m [38;5;241m0[39m):
-[1;32m     26[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mNesterov momentum requires a momentum and zero dampening[39m[38;5;124m"[39m)
-[0;32m---> 27[0m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m[43mparams[49m[43m,[49m[43m [49m[43mdefaults[49m[43m)[49m
-
-File [0;32m~/anaconda3/envs/py39/lib/python3.9/site-packages/torch/optim/optimizer.py:273[0m, in [0;36mOptimizer.__init__[0;34m(self, params, defaults)[0m
-[1;32m    271[0m param_groups [38;5;241m=[39m [38;5;28mlist[39m(params)
-[1;32m    272[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(param_groups) [38;5;241m==[39m [38;5;241m0[39m:
-[0;32m--> 273[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124moptimizer got an empty parameter list[39m[38;5;124m"[39m)
-[1;32m    274[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(param_groups[[38;5;241m0[39m], [38;5;28mdict[39m):
-[1;32m    275[0m     param_groups [38;5;241m=[39m [{[38;5;124m'[39m[38;5;124mparams[39m[38;5;124m'[39m: param_groups}]
-
-[0;31mValueError[0m: optimizer got an empty parameter list
+  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+  File "/Users/hadiji/anaconda3/envs/py39/lib/python3.9/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['n = 200 # number of training points that we keep', 'c1, c2 = 3, 6 # subclasses that are kept, make sure that c1 < c2', '', 'batch_size = 32 # training batch size', '']
+...
+["testset = datasets.FashionMNIST(root='./data', train=False, download=True, transform=transform)", 'idx = torch.as_tensor(testset.targets) == c1', 'idx += torch.as_tensor(testset.targets) == c2', 'dset_test = torch.utils.data.dataset.Subset(testset, np.where(idx==1)[0])', 'testloader = torch.utils.data.DataLoader(dset_test)']
+-------------------
 

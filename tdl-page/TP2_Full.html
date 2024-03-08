@@ -538,7 +538,7 @@ Write two fully connected networks, with dims <span class="math notranslate nohi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9b16cb8e377e6422101d9333040b8725f9d101ad01b0436cf6a17f9f12833802.png" src="_images/9b16cb8e377e6422101d9333040b8725f9d101ad01b0436cf6a17f9f12833802.png" />
+<img alt="_images/cd5688302688263222ec0dc892a827d342620cf3c0b1bf94a58259ea0ee9bbed.png" src="_images/cd5688302688263222ec0dc892a827d342620cf3c0b1bf94a58259ea0ee9bbed.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -610,7 +610,7 @@ Write two fully connected networks, with dims <span class="math notranslate nohi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/53c3a35799af94ddb4abf60c8ec5d570bbaae7c87a882327d5170b98df5a619c.png" src="_images/53c3a35799af94ddb4abf60c8ec5d570bbaae7c87a882327d5170b98df5a619c.png" />
+<img alt="_images/f98962fff2788412667f55e6281a26a6b055973457eac4ceca0d32c281987bd5.png" src="_images/f98962fff2788412667f55e6281a26a6b055973457eac4ceca0d32c281987bd5.png" />
 </div>
 </div>
 </section>
@@ -657,14 +657,14 @@ Write two fully connected networks, with dims <span class="math notranslate nohi
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Squared error of O pred: 0.0932499235305304
-Squared error of mlp: 0.087873030589486
+Squared error of mlp: 0.08509111325140929
 total_train_steps : 0
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;At initialization&#39;)
 </pre></div>
 </div>
-<img alt="_images/64acfa68815e8020fb353cc00fa8dd842c0d433ce28ca4e18ee03b67689ac72f.png" src="_images/64acfa68815e8020fb353cc00fa8dd842c0d433ce28ca4e18ee03b67689ac72f.png" />
+<img alt="_images/cc7b8ea892c2f38b9deb5d49b7210286bb0155e52f7b5c81a21200277ab1a1bc.png" src="_images/cc7b8ea892c2f38b9deb5d49b7210286bb0155e52f7b5c81a21200277ab1a1bc.png" />
 </div>
 </div>
 </section>
@@ -731,10 +731,53 @@ where
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total training steps : 3000000
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">next_batch</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1">#print(inputs.shape)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># forward + backward + optimize</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">mlp</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/py39/lib/python3.9/site-packages/torch/_compile.py:24,</span> in <span class="ni">_disable_dynamo.&lt;locals&gt;.inner</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="kn">import</span> <span class="nn">torch._dynamo</span>
+<span class="ne">---&gt; </span><span class="mi">24</span>     <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">_dynamo</span><span class="o">.</span><span class="n">disable</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">recursive</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/py39/lib/python3.9/site-packages/torch/_dynamo/decorators.py:46,</span> in <span class="ni">disable</span><span class="nt">(fn, recursive)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="n">fn</span> <span class="o">=</span> <span class="n">innermost_fn</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="k">assert</span> <span class="nb">callable</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="k">return</span> <span class="n">DisableContext</span><span class="p">()(</span><span class="n">fn</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">return</span> <span class="n">DisableContext</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/envs/py39/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py:437,</span> in <span class="ni">_TorchDynamoContext.__call__</span><span class="nt">(self, fn)</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="k">assert</span> <span class="nb">callable</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">437</span>     <span class="n">filename</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsourcefile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="n">filename</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">File ~/anaconda3/envs/py39/lib/python3.9/inspect.py:706,</span> in <span class="ni">getsourcefile</span><span class="nt">(object)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>              <span class="n">importlib</span><span class="o">.</span><span class="n">machinery</span><span class="o">.</span><span class="n">EXTENSION_SUFFIXES</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">706</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="k">return</span> <span class="n">filename</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span> <span class="c1"># only return a non-existent filename if the module has a PEP 302 loader</span>
+
+<span class="nn">File ~/anaconda3/envs/py39/lib/python3.9/genericpath.py:19,</span> in <span class="ni">exists</span><span class="nt">(path)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Test whether a path exists.  Returns False for broken symbolic links&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="k">return</span> <span class="kc">False</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="_images/bb227689f16e82e4dceaea5be85f9a7270b42021b6931cfcb3bf3591b19890e6.png" src="_images/bb227689f16e82e4dceaea5be85f9a7270b42021b6931cfcb3bf3591b19890e6.png" />
 </div>
 </div>
 <div class="cell docutils container">
