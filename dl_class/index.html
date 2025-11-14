@@ -1,84 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="Hedi Hadiji" content="">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Deep Learning 3A</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.55;
+    }
 
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
 
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+
+    header p {
+      margin: .4rem 0;
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    header a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+    }
+
+    ul.lectures {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.lectures li {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    ul.lectures li:last-child {
+      border-bottom: none;
+    }
+
+    .lecture-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: .35rem;
+      color: #222;
+    }
+
+    a.resource {
+      text-decoration: none;
+      color: #0066cc;
+      margin-right: 1rem;
+      font-weight: 400;
+    }
+
+    a.resource:hover {
+      text-decoration: underline;
+      color: #004499;
+    }
+
+    .project-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e5e5;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .project-section a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .project-section a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <h1>Deep Learning 3A</h1>
+    <p>Mention Information and Communications Engineering</p>
+    <p>Lecturer: <a href="../index.html">Hédi Hadiji</a></p>
+  </header>
 
-<header class="site-header" role="banner">
-  <h1>Deep Learning 3A</h1>
-  <p>Mention Information and Communications Engineering </p>
-  <p>Lecturer: <a href=../index.html>Hédi Hadiji </a></p> 
-</header>
+  <div class="container">
+    
+    <br><br>
+    <ul class="lectures">
 
-<section class="lecture-links">
-  <ul>
-    <li>
-      Lecture 1: Introduction, MLP, Backprop.
-      <a href="resources/lecture1/Lect1.pdf" target="_blank" rel="noopener">slides</a>,
-      <a href="resources/lecture1/TP1_students.ipynb" target="_blank" download>TP</a>,
-      <a href="resources/lecture1/TP1_solutions.ipynb" target="_blank" download>Solution</a>
-    </li>
-    <li>
-      Lecture 2: Convolutional Neural Networks.
-      <a href="resources/lecture2/Lect2.pdf" target="_blank" rel="noopener">slides</a>,
-      <a href="resources/lecture2/TP2_students.ipynb" target="_blank" download>TP</a>,
-      <a href="resources/lecture2/TP2_Full.ipynb" target="_blank" download>Solution</a>
-      <!-- <a href="resources/lecture2/solution.pdf" target="_blank" rel="noopener">Solution</a> -->
-    </li>
-    <li>
-      Lecture 3: Transformers 1: Sequence models, (Self-)Attention.
-      <a href="resources/lecture3/Lect3.pdf" target="_blank" rel="noopener">slides</a>,
-      <a href="resources/lecture3/TP3_students.zip" target="_blank" rel="noopener" download>TP</a>,
-      <a href="resources/lecture3/TP3_Solutions.ipynb" target="_blank" download>Solution</a>
-    </li>
-    <li>
-      Lecture 4: Transformers 2: Encoder-Decoder, Vision Transformers.
-      <a href="resources/lecture4/Lect4.pdf" target="_blank" rel="noopener">slides</a>,
-      <a href="resources/lecture4/TP4_students.zip" target="_blank" rel="noopener" download="">TP</a>,
-      <a href="resources/lecture4/TP4_solutions.ipynb" target="_blank" rel="noopener" download>Solution</a>
-    </li>
-    <li>
-      Lecture 5: Training Neural Nets: Regularization, Stabilization.
-      <a href="resources/lecture5/Lect5.pdf" target="_blank" rel="noopener">slides</a>,
-      <a href="resources/lecture5/TP5_students.ipynb" target="_blank" rel="noopener", download>TP</a>,
-      <a href="resources/lecture5/TP5.ipynb" target="_blank" rel="noopener" download>Solution</a>
-    </li>
-    <li>
-      Lecture 6: Generative Models (Autoencoders, Diffusion).
-      <a href="resources/lecture6/Lect6.pdf" target="_blank" rel="noopener">slides</a>,
-      <a href="resources/lecture6/tp6.zip" target="_blank" rel="noopener" download>TP</a>,
-      <a href="resources/lecture6/TP6_1_solutions.ipynb" target="_blank" rel="noopener" download>Solution</a>
-    </li>
-    <li>
-      Lecture 7: Some Aspects of Large Language Models.
-      <a href="resources/lecture7/Lect7.pdf" target="_blank" rel="noopener">slides</a>,
-      <a href="resources/lecture7/TP7.ipynb" target="_blank" rel="noopener" download>
-        TP updated</a>
-      <!-- <a href="resources/lecture2/solution.pdf" target="_blank" rel="noopener">Solution</a> -->
-    </li>
-  </ul>
-</section>
+      <li>
+        <div class="lecture-title">Lecture 1: Introduction, MLP, Backprop.</div>
+        <a class="resource" href="resources/lecture1/Lect1.pdf" target="_blank">Slides</a>
+        <a class="resource" href="resources/lecture1/TP1_students.ipynb" download>TP</a>
+        <a class="resource" href="resources/lecture1/TP1_solutions.ipynb" download>Solution</a>
+      </li>
 
-<section class="project-links">
-  <p>
-    Project: <a href="resources/project.pdf" target="_blank" rel="noopener">Music genre classification</a><br>
-    Deadline: 30th November
-  </p>
-</section>
-  <p>
+      <li>
+        <div class="lecture-title">Lecture 2: Convolutional Neural Networks.</div>
+        <a class="resource" href="resources/lecture2/Lect2.pdf" target="_blank">Slides</a>
+        <a class="resource" href="resources/lecture2/TP2_students.ipynb" download>TP</a>
+        <a class="resource" href="resources/lecture2/TP2_Full.ipynb" download>Solution</a>
+      </li>
+
+      <li>
+        <div class="lecture-title">Lecture 3: Transformers 1: Sequence models, (Self-)Attention.</div>
+        <a class="resource" href="resources/lecture3/Lect3.pdf" target="_blank">Slides</a>
+        <a class="resource" href="resources/lecture3/TP3_students.zip" download>TP</a>
+        <a class="resource" href="resources/lecture3/TP3_Solutions.ipynb" download>Solution</a>
+      </li>
+
+      <li>
+        <div class="lecture-title">Lecture 4: Transformers 2: Encoder-Decoder, Vision Transformers.</div>
+        <a class="resource" href="resources/lecture4/Lect4.pdf" target="_blank">Slides</a>
+        <a class="resource" href="resources/lecture4/TP4_students.zip" download>TP</a>
+        <a class="resource" href="resources/lecture4/TP4_solutions.ipynb" download>Solution</a>
+      </li>
+
+      <li>
+        <div class="lecture-title">Lecture 5: Training Neural Nets: Regularization, Stabilization.</div>
+        <a class="resource" href="resources/lecture5/Lect5.pdf" target="_blank">Slides</a>
+        <a class="resource" href="resources/lecture5/TP5_students.ipynb" download>TP</a>
+        <a class="resource" href="resources/lecture5/TP5.ipynb" download>Solution</a>
+      </li>
+
+      <li>
+        <div class="lecture-title">Lecture 6: Generative Models (Autoencoders, Diffusion).</div>
+        <a class="resource" href="resources/lecture6/Lect6.pdf" target="_blank">Slides</a>
+        <a class="resource" href="resources/lecture6/tp6.zip" download>TP</a>
+        <a class="resource" href="resources/lecture6/TP6_1_solutions.ipynb" download>Solution</a>
+      </li>
+
+      <li>
+        <div class="lecture-title">Lecture 7: Some Aspects of Large Language Models.</div>
+        <a class="resource" href="resources/lecture7/Lect7.pdf" target="_blank">Slides</a>
+        <a class="resource" href="resources/lecture7/TP7.ipynb" download>TP updated</a>
+      </li>
+
+    </ul>
+
+    <div class="project-section">
+      Project: <a href="resources/project.pdf" target="_blank">Music genre classification</a><br>
+      Deadline: 30th November
+    </div>
+
+  </div>
+
 </body>
-
-
 </html>
